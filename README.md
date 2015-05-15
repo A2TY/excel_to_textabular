@@ -1,4 +1,4 @@
-# excel_to_textabular
+# Excel_to_TeX-tabular
 
 ###要項
 
