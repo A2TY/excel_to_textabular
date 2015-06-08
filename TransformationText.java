@@ -52,9 +52,11 @@ public class TransformationText {
 		String tabularStyle = new String(sb);
 		tmp = text.replaceAll("\t", " & ");
 		tmp = tmp.replaceAll("\n", "\\\\\\\\\n\\\\hline\n");
-		trasformationText = "\\begin{center}\n\\begin{tabular}[c]"
-				+ tabularStyle + "\n\\hline\n" + tmp
-				+ "\\\\\n\\hline\n\\end{tabular}\n\\end{center}";
+		trasformationText = "\\begin{table}[h]\n\\caption{}\n\\centering\n\\begin{tabular}[c]"
+				+ tabularStyle
+				+ "\n\\hline\n"
+				+ tmp
+				+ "\\\\\n\\hline\n\\end{tabular}\n\\end{table}";
 
 		return trasformationText;
 	}
