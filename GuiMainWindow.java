@@ -10,7 +10,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
@@ -48,14 +47,11 @@ public class GuiMainWindow extends JFrame {
 		contentPane.setLayout(null);
 
 		final JTextArea textArea = new JTextArea();
-		JScrollPane scrollpane = new JScrollPane(textArea);
 		textArea.setTabSize(2);
 		textArea.setBounds(10, 70, 290, 330);
-		scrollpane.setPreferredSize(new Dimension(20, 20));
 		contentPane.add(textArea);
 
 		final JTextArea textArea_1 = new JTextArea();
-		JScrollPane scrollpane2 = new JScrollPane(textArea_1);
 		textArea_1.setTabSize(2);
 		textArea_1.setBounds(320, 70, 290, 330);
 		contentPane.add(textArea_1);
