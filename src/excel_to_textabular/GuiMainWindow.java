@@ -56,7 +56,7 @@ public class GuiMainWindow extends JFrame {
 		textArea_1.setBounds(320, 70, 290, 330);
 		contentPane.add(textArea_1);
 
-		String[] combodata = { "¶‘µ‚¦", "’†‰›‘µ‚¦", "‰E‘µ‚¦" };
+		String[] combodata = { "å·¦è©°ã‚", "ä¸­å¤®è©°ã‚", "å³è©°ã‚" };
 		final JComboBox comboBox = new JComboBox(combodata);
 		comboBox.setBounds(10, 7, 117, 28);
 		contentPane.add(comboBox);

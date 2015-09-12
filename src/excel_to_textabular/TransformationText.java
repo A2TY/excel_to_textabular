@@ -9,7 +9,7 @@ public class TransformationText {
 	char celStyle = 'l';
 
 	/*
-	 * ‰½—ñ‚Ì•\‚©‚ğ’²‚×‚é
+	 * ï¿½ï¿½ï¿½ï¿½Ì•\ï¿½ï¿½ï¿½ğ’²‚×‚ï¿½
 	 */
 	public void tabCount(String text) {
 		char word = 0;
@@ -22,7 +22,7 @@ public class TransformationText {
 	}
 
 	/*
-	 * ƒZƒ‹‚ğ‰½‘µ‚¦‚É‚·‚é‚©‚ğİ’è
+	 * ï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½é‚©ï¿½ï¿½İ’ï¿½
 	 */
 	public void celStyle(int index) {
 		switch (index) {
@@ -39,7 +39,7 @@ public class TransformationText {
 	}
 
 	/*
-	 * TeX tabularŒ`®‚É•ÏŠ·
+	 * TeX tabularï¿½`ï¿½ï¿½ï¿½É•ÏŠï¿½
 	 */
 	public String transformationText(String text) {
 		this.tabCount(text);
@@ -52,7 +52,7 @@ public class TransformationText {
 		String tabularStyle = new String(sb);
 		tmp = text.replaceAll("\t", " & ");
 		tmp = tmp.replaceAll("\n", "\\\\\\\\\n\\\\hline\n");
-		trasformationText = "\\begin{table}[h]\n\\caption{}\n\\centering\n\\begin{tabular}[c]"
+		trasformationText = "\\begin{table}[h]\n\\caption{}\\label{tbl:}\n\\centering\n\\begin{tabular}[c]"
 				+ tabularStyle
 				+ "\n\\hline\n"
 				+ tmp
