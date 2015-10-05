@@ -5,12 +5,7 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 public class GuiMainWindow extends JFrame {
@@ -39,6 +34,7 @@ public class GuiMainWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public GuiMainWindow() {
+		// メインフレーム
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 621, 435);
 		contentPane = new JPanel();
@@ -46,22 +42,26 @@ public class GuiMainWindow extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		// 入力エリア
 		final JTextArea textArea = new JTextArea();
 		textArea.setTabSize(2);
 		textArea.setBounds(10, 70, 290, 330);
 		contentPane.add(textArea);
 
+		// 出力エリア
 		final JTextArea textArea_1 = new JTextArea();
 		textArea_1.setTabSize(2);
 		textArea_1.setBounds(320, 70, 290, 330);
 		contentPane.add(textArea_1);
 
+		// セルの書式を選択
 		String[] combodata = { "左詰め", "中央詰め", "右詰め" };
 		final JComboBox comboBox = new JComboBox(combodata);
 		comboBox.setBounds(10, 7, 117, 28);
 		contentPane.add(comboBox);
 		comboBox.setPreferredSize(new Dimension(80, 30));
 
+		//変換ボタンを押した時の動作
 		JButton button = new JButton("\u5909\u63DB");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -74,16 +74,21 @@ public class GuiMainWindow extends JFrame {
 
 			}
 		});
+
+		// 変換実行ボタン
 		button.setBounds(493, 6, 117, 29);
 		contentPane.add(button);
 
+		// 出力エリアラベル
 		JLabel lblExcel = new JLabel("Excel");
 		lblExcel.setBounds(10, 36, 134, 29);
 		contentPane.add(lblExcel);
 
+		// 入力エリアラベル
 		JLabel lblTexTabular = new JLabel("TeX tabular");
 		lblTexTabular.setBounds(320, 36, 134, 29);
 		contentPane.add(lblTexTabular);
 
 	}
+
 }

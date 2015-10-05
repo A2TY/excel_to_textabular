@@ -9,7 +9,7 @@ public class TransformationText {
 	char celStyle = 'l';
 
 	/*
-	 * ����̕\���𒲂ׂ�
+	 * 列数をカウント
 	 */
 	public void tabCount(String text) {
 		char word = 0;
@@ -22,7 +22,7 @@ public class TransformationText {
 	}
 
 	/*
-	 * �Z�����������ɂ��邩��ݒ�
+	 * セルの書式を設定する
 	 */
 	public void celStyle(int index) {
 		switch (index) {
@@ -39,7 +39,7 @@ public class TransformationText {
 	}
 
 	/*
-	 * TeX tabular�`���ɕϊ�
+	 * TeXのtabular形式で出力
 	 */
 	public String transformationText(String text) {
 		this.tabCount(text);
