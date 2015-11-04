@@ -42,6 +42,12 @@ public class GuiMainWindow extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		// 相互参照ラベル入力エリア
+		final JTextArea referenceTextArea = new JTextArea();
+		referenceTextArea.setTabSize(2);
+		referenceTextArea.setBounds(210, 10, 90, 20);
+		contentPane.add(referenceTextArea);
+
 		// 入力エリア
 		final JTextArea textArea = new JTextArea();
 		textArea.setTabSize(2);
@@ -61,19 +67,23 @@ public class GuiMainWindow extends JFrame {
 		contentPane.add(comboBox);
 		comboBox.setPreferredSize(new Dimension(80, 30));
 
-		//変換ボタンを押した時の動作
+		// 変換ボタンを押した時の動作
 		JButton button = new JButton("\u5909\u63DB");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TransformationText text = new TransformationText();
 				int index = comboBox.getSelectedIndex();
 				text.celStyle(index);
-				String transformationText = text.transformationText(textArea
-						.getText());
+				String transformationText = text.transformationText(referenceTextArea.getText(), textArea.getText());
 				textArea_1.setText(transformationText);
 
 			}
 		});
+
+		// 相互参照ラベル入力エリアラベル
+		JLabel referenceLabel = new JLabel("参照ラベル");
+		referenceLabel.setBounds(140, 6, 80, 29);
+		contentPane.add(referenceLabel);
 
 		// 変換実行ボタン
 		button.setBounds(493, 6, 117, 29);

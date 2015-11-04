@@ -41,7 +41,7 @@ public class TransformationText {
 	/*
 	 * TeXのtabular形式で出力
 	 */
-	public String transformationText(String text) {
+	public String transformationText(String referenceText, String text) {
 		this.tabCount(text);
 		StringBuilder sb = new StringBuilder();
 		sb.append("{");
@@ -51,12 +51,16 @@ public class TransformationText {
 		sb.append("|}");
 		String tabularStyle = new String(sb);
 		tmp = text.replaceAll("\t", " & ");
-		tmp = tmp.replaceAll("\n", "\\\\\\\\\n\\\\hline\n");
-		trasformationText = "\\begin{table}[h]\n\\caption{}\\label{tbl:}\n\\centering\n\\begin{tabular}[c]"
+		tmp = tmp.replaceAll("\n", "\\\\\\\\\n\t\t\\\\hline\n\t\t");
+		trasformationText = "%\\tabref{tbl:"
+				+ referenceText
+				+ "}\n\\begin{table}[h]\n\t\\caption{}\n\t\\label{tbl:"
+				+ referenceText
+				+ "}\n\t\\centering\n\t\\begin{tabular}[c]"
 				+ tabularStyle
-				+ "\n\\hline\n"
+				+ "\n\t\t\\hline\n\t\t"
 				+ tmp
-				+ "\\\\\n\\hline\n\\end{tabular}\n\\end{table}";
+				+ "\\\\\n\t\t\\hline\n\t\\end{tabular}\n\\end{table}";
 
 		return trasformationText;
 	}
